@@ -1,0 +1,12 @@
+# Copy to terraform.tfvars and edit. terraform.tfvars is gitignored.
+
+# Required — receives GuardDuty HIGH/CRITICAL findings and budget alerts.
+# You must confirm the SNS subscription email AWS sends after the first apply.
+alert_email = "you@example.com"
+
+# Optional — all have sensible defaults.
+project_name       = "detection-lab" # prefix for all resource names
+region             = "us-east-1"     # AWS region to deploy into
+budget_limit       = 50              # monthly USD budget; alerts at 80% and 100%
+auto_shutdown_hour = 23              # UTC hour the VM powers itself off (0-23)
+log_retention_days = 30              # CloudWatch log retention in days
