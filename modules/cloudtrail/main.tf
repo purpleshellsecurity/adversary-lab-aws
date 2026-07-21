@@ -17,9 +17,9 @@ data "aws_iam_policy_document" "cloudtrail_assume" {
 
 data "aws_iam_policy_document" "cloudtrail_logs" {
   statement {
-    sid     = "CloudTrailCWLogs"
-    effect  = "Allow"
-    actions = ["logs:CreateLogStream", "logs:PutLogEvents"]
+    sid       = "CloudTrailCWLogs"
+    effect    = "Allow"
+    actions   = ["logs:CreateLogStream", "logs:PutLogEvents"]
     resources = ["${aws_cloudwatch_log_group.cloudtrail.arn}:*"]
   }
 }
